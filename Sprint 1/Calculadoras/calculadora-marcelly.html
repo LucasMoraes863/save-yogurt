@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira - Marcelly</title>
+</head>
+<body background="img-calc-marcelly/Capa - Branca.svg">
+    <h1>CALCULADORA FINANCEIRA</h1>
+    <h2>Descubra o impacto da Save-Yogurt na sua empresa</h2>
+
+    <label>Quantos lotes de iogurte a sua empresa transporta por mês?</label> <br>
+    <input type="number" id="ipt_qtd_lotes" placeholder="Digite a quantidade de lotes"> <br><br>
+
+    <label>Qual o valor de cada lote?</label> <br>
+    <input type="text" id="ipt_valor_lote" placeholder="Digite o preço unitário do lote"> <br><br>
+
+    <label>Qual a porcentagem de perda de carga por falhas na refrigeração?</label> <br>
+    <input type="number" id="ipt_porcentagem_perda"  placeholder="Digite o valor em %"> <br><br>
+
+    <button id="btn_calcular" onclick="Calcular()"><strong>Simular economia</strong></button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<style>
+    h1{
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        margin: 0 0;
+    }
+
+    h2 {
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 10px;
+    }
+
+    label {
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    img {
+        height: 200px;
+        width: 230px;
+        margin: 20px;
+    }
+    input{
+        width: 40%;
+        padding: 10px 20px; 
+        margin: 5px 0;
+        border: 2px solid #56c1db;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    button {
+        background-color: #56c1db;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        font-variant-caps: all-small-caps;
+        margin: 2px 0;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    div{
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-size: 16px;
+        margin-top: 20px;
+        background-color: rgba(4, 11, 54, 0.5);
+        padding: 15px;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    function Calcular() {
+    let qtdLotes = Number(ipt_qtd_lotes.value);
+    let valorLote = Number(ipt_valor_lote.value);
+    let porcentagemPerda = Number(ipt_porcentagem_perda.value);
+
+    if (qtdLotes <= 0 || valorLote <= 0 || porcentagemPerda <= 0) {
+        alert("Por favor, insira valores válidos e maiores que zero para realizar a simulação.");
+    }
+
+    // Valor total do mes
+    let valorTotalMes = qtdLotes * valorLote; 
+
+    // Perda por mes
+    let perdaMensal = valorTotalMes * (porcentagemPerda / 100); 
+    
+    // Quanto perde por ano
+    let perdaAnual = perdaMensal * 12;
+
+    var perdaAnualFormatada = perdaAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    
+    div_resultado.innerHTML = `
+        <p>Sem o monitoramento adequado sua empresa perde atualmente <strong>${perdaMensal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong> por mês.</p>
+        <hr style="border: 1px solid #56c1db; margin: 15px 0;">
+        <p>Com a <strong>Save-Yogurt</strong> controlando a refrigeração, você elimina essas perdas e economiza cerca de <span style="color: #56c1db;"><strong>${perdaAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong></span> por ano!</p>
+
+        <img src="img-calc-marcelly/logofundoescuro.png" alt="Logo save yogurt sem fundo, versão clara">
+    `;
+}
+</script>
