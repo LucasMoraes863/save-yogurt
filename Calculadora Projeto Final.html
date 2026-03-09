@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: #1E97BC;
+            text-align: center;
+        }
+        .logo{
+width:75px;
+height:75px;
+animation: flutuar 3s ease-in-out infinite;
+transition: transform 0.3s;
+}
+
+.logo:hover{
+transform: scale(1.2);
+}
+
+@keyframes flutuar{
+0%{transform: translateY(0px);}
+50%{transform: translateY(-8px);}
+100%{transform: translateY(0px);}
+}
+    </style>
+    <div animation-name><img class="logo" src="https://cdn.discordapp.com/attachments/1471596501397405721/1479617838288474213/Save_Yogurt_Logo_Vetorizada_Ofc.png?ex=69acb0fe&is=69ab5f7e&hm=334c30b49bf6470599257bba7b4e1095003639fb85db159ff8f87cae847c6c3a&" style="width: 75px;
+            height: 75px;"></div><br>
+  <h1>Calculadora financeira</h1>
+
+<br><br>
+
+
+<label>Quantas cargas são transportadas por ano?</label><br>
+<input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
+
+<label>Qual a porcentagem média de perdas por falha na cadeia fria? (Sem %)</label><br>
+<input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
+
+<label>Qual o valor médio de uma carga de iogurte (R$)?</label><br>
+<input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
+
+<button onclick="calcular()">Calcular Retorno</button>
+
+<br><br>
+
+<button onclick="explicar()" style="display:none;" id="btn_ROI">
+*O que é ROI?
+</button>
+
+<br><br>
+
+<div id="output"></div>
+
+<script>
+
+function calcular(){
+
+let volume = Number(ipt_quantidade_cargas.value);
+let taxaPerda = Number(ipt_taxa_perda.value) / 100;
+let valorCarga = Number(ipt_valor_medio.value);
+
+let cargasPerdidas = volume * taxaPerda;
+
+let reducaoSensor = 0.8;
+
+let cargasPerdidasComSensor = cargasPerdidas * (1 - reducaoSensor);
+
+let cargasEvitadas = cargasPerdidas - cargasPerdidasComSensor;
+
+let valorSemSensor = volume * valorCarga * taxaPerda;
+let valorComSensor = valorSemSensor * (1 - reducaoSensor);
+let economia = valorSemSensor - valorComSensor;
+
+output.innerHTML = `
+<h3>Resultado da Simulação</h3>
+
+Cargas perdidas sem sensor: <span style="color:red;font-weight:bold;">${cargasPerdidas.toFixed(1)}</span> <br>
+Cargas perdidas com sensor: ${cargasPerdidasComSensor.toFixed(1)} <br>
+Cargas preservadas com sensor: ${cargasEvitadas.toFixed(1)} <br>
+Prejuízo estimado sem sensor: <span style="color:red;font-weight:bold;">R$ ${valorSemSensor.toFixed(2)}</span> <br>
+Prejuízo estimado com sensor: R$ ${valorComSensor.toFixed(2)} <br>
+Economia estimada com sensor: R$ ${economia.toFixed(2)} <br>
+`;
+
+btn_ROI.style.display = "inline";
+
+}
+
+function explicar(){
+
+output.innerHTML += `
+<br><br>
+<b>ROI (Return on Investment)</b> significa retorno sobre investimento.
+Ele mostra quanto dinheiro a empresa economiza ou ganha após investir
+em uma solução, como sensores de monitoramento de temperatura.
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
