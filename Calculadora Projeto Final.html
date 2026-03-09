@@ -22,8 +22,7 @@
             width: 75px;
             height: 75px;
             animation: flutuar 3s ease-in-out infinite;
-            transition: transform 0.3s;
-        }
+            }
 
         @keyframes flutuar {
             0% {
@@ -34,7 +33,7 @@
                 transform: translateY(-8px);
             }
 
-            100% {
+            100% {  
                 transform: translateY(0px);
             }
 
@@ -42,7 +41,6 @@
 
         .btn:hover {
             cursor: pointer;
-            transform: scale(1.1);
         }
 
         .quadrado {
@@ -59,6 +57,14 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+
+        input {
+            padding: 5px;
+            border-radius: 5%;
+            border-width: 1px;
+            margin: 5px;
+            outline: none;
+        }
     </style>
     <div class="quadrado">
         <div animation-name><img class="logo" src="Save_Yogurt_Logo_Vetorizada_Ofc.png" style="width: 75px;
@@ -67,17 +73,17 @@
 
         <br><br>
 
-        <div style="display: block;">
-            <label>Quantos paletes são transportadas por ano?</label><br>
+        <div>
+            <label>Quantas toneladas são transportadas por ano?</label><br>
             <input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
         </div>
-        <div style="display: block;">
+        <div>
             <label>Porcentagens de perdas por falha na cadeia fria? (Sem "%")</label><br>
             <input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
         </div>
 
-        <div style="display: block;">
-            <label>Qual o valor médio do palete de iogurte (R$)?</label><br>
+        <div>
+            <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
             <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
         </div>
         <button class="btn" onclick="calcular()">Calcular Retorno</button>
@@ -87,11 +93,7 @@
         <div id="output"></div>
     </div>
     </div>
-    <div id="output2">
-        <button class="btn" onclick="explicar()" style="display:none;" id="btn_ROI">
-            O que é ROI?
-        </button>
-    </div>
+    
 
 
     <script>
@@ -104,42 +106,24 @@
 
             let cargasPerdidas = volume * taxaPerda;
 
-            let reducaoSensor = 0.8;
-
-            let cargasPerdidasComSensor = cargasPerdidas * (1 - reducaoSensor);
+            let cargasPerdidasComSensor = cargasPerdidas * 0.2;
 
             let cargasEvitadas = cargasPerdidas - cargasPerdidasComSensor;
 
             let valorSemSensor = volume * valorCarga * taxaPerda;
-            let valorComSensor = valorSemSensor * (1 - reducaoSensor);
+            let valorComSensor = valorSemSensor * 0.2;
             let economia = valorSemSensor - valorComSensor;
 
             output.innerHTML = `
-<h3>Resultado da Simulação</h3>
+                <h3>Resultado da Simulação</h3>
 
-Paletes estimadas perdidas após o sensor: ${cargasPerdidasComSensor.toFixed(0)} <br>
-Paletes estimadas preservadas após o sensor: ${cargasEvitadas.toFixed(0)} <br>
-Prejuízo estimado sem sensor: <span style="color:#ab0c0c;font-weight:bold;">R$ ${valorSemSensor.toFixed(2)} (R$ ${valorSemSensor.toFixed(2) / 1000000.} Milhões)</span> <br>
-Prejuízo máximo estimado com o sensor: R$ ${valorComSensor.toFixed(2)} (R$ ${valorComSensor.toFixed(0) / 1000000} Milhões) <br>
-Economia mínima estimada com o sensor: R$ ${economia.toFixed(2)} (R$ ${economia / 1000000} Milhões) <br>
-`;
+                Toneladas estimadas perdidas após o sensor: ${cargasPerdidasComSensor.toFixed(2)}T <br>
+                Toneladas estimadas preservadas após o sensor: ${cargasEvitadas.toFixed(2)}T <br>
+                Prejuízo máximo estimado com o sensor: R$ ${valorComSensor.toFixed(2)} (R$ ${valorComSensor.toFixed(0) / 1000000} Milhões) <br>
+                Economia mínima estimada com o sensor: R$ ${economia.toFixed(2)} (R$ ${economia / 1000000} Milhões) <br>
+            `;
 
-            btn_ROI.style.display = "inline";
 
-        }
-
-        function explicar() {
-            if (contador == 0) {
-                contador++
-                output2.innerHTML = `
-    <br><br>
-    <b>ROI (Return on Investment)</b> significa retorno sobre investimento.
-    Ele mostra quanto dinheiro a empresa economiza ou ganha após investir
-    em uma solução, como sensores de monitoramento de temperatura.
-
-    `;
-
-            }
         }
 
     </script>
