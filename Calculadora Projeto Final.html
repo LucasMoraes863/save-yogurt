@@ -12,10 +12,6 @@
     <style>
         body {
             background-color: #a2e9ff;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .logo {
@@ -43,21 +39,6 @@
             cursor: pointer;
         }
 
-        .quadrado {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            flex-direction: column;
-            width: 60vh;
-            margin-top: 5vh;
-            border-radius: 5%;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
         input {
             padding: 5px;
             border-radius: 5%;
@@ -66,33 +47,28 @@
             outline: none;
         }
     </style>
-    <div class="quadrado">
-        <div animation-name><img class="logo" src="Save_Yogurt_Logo_Vetorizada_Ofc.png" style="width: 75px;
+    <div animation-name><img class="logo" src="Save_Yogurt_Logo_Vetorizada_Ofc.png" style="width: 75px;
                 height: 75px;"></div><br>
         <h1>Calculadora financeira</h1>
 
         <br><br>
 
-        <div>
-            <label>Quantas toneladas são transportadas por ano?</label><br>
-            <input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
-        </div>
-        <div>
-            <label>Porcentagens de perdas por falha na cadeia fria? (Sem "%")</label><br>
-            <input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
-        </div>
+        <label>Quantas toneladas são transportadas por ano?</label><br>
+        <input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
 
-        <div>
-            <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
-            <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
-        </div>
+        <label>Porcentagens de perdas por falha na cadeia fria? (Sem "%")</label><br>
+        <input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
+
+        <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
+        <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
+
         <button class="btn" onclick="calcular()">Calcular Retorno</button>
 
         <br><br>
 
         <div id="output"></div>
     </div>
-    </div>
+
     
 
 
