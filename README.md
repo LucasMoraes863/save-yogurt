@@ -1,5 +1,27 @@
-O projeto consiste no desenvolvimento de um sistema de monitoramento contínuo da temperatura de iogurtes durante o transporte refrigerado, com o objetivo de garantir a manutenção da cadeia fria e preservar a estabilidade microbiológica do produto.
+# Save-Yogurt 🍦❄️
 
-A solução emprega sensores digitais com precisão adequada para controle de alimentos perecíveis, realizando leituras periódicas e transmitindo os dados para um sistema de monitoramento em tempo real. O sistema opera com base na faixa de temperatura recomendada para produtos lácteos refrigerados (2°C a 8°C), gerando alertas graduais sempre que forem identificadas variações fora do intervalo estabelecido.
+Sistema de monitoramento contínuo da cadeia do frio para transporte de iogurtes, focado em segurança alimentar e redução de desperdícios.
 
-O monitoramento contínuo permite a identificação precoce de desvios térmicos, possibilitando ações corretivas durante o transporte e reduzindo o risco de deterioração microbiológica, perda de qualidade e prejuízos logísticos.
+## 🎯 Objetivo
+[cite_start]Implementar um sensor de monitoramento térmico que registra variações de temperatura a cada minuto, garantindo que 100% das oscilações fora da faixa ideal gerem alertas automáticos[cite: 21, 22].
+
+## 🚀 Funcionalidades
+* [cite_start]**Monitoramento Real-time:** Leituras constantes com frequência padrão de 1 minuto[cite: 61].
+* [cite_start]**Alertas Inteligentes:** Notificações automáticas para temperaturas fora do intervalo de **2°C a 8°C**[cite: 22, 74].
+* [cite_start]**Classificação de Risco:** Sistema de níveis (Normal, Alerta e Crítico) para facilitar a tomada de decisão[cite: 62].
+* **Análise Financeira:** Calculadoras integradas para estimar o Retorno sobre Investimento (ROI) e economia logística.
+
+## 🛠️ Tecnologias
+* [cite_start]**Hardware:** Sensores digitais de temperatura para compartimentos de carga[cite: 59].
+* **Backend:** Banco de dados MySQL para gestão de medições, utilizadores e transportadoras.
+* **Frontend:** Interface web (HTML/JS) para dashboards e simulações financeiras.
+
+## 👥 Equipa (Grupo Save-Yogurt)
+* [cite_start]Carlos Eduardo de Arruda Chaves [cite: 6]
+* [cite_start]Enzo Martins Quinalha [cite: 7]
+* [cite_start]Gus Kenzo Shigeoka Paulino [cite: 8]
+* [cite_start]Lucas Ricardo de Almeida Moraes [cite: 9]
+* [cite_start]Marcelly Pereira da Silva [cite: 10]
+* [cite_start]Matheus Delfiol Tavares [cite: 11]
+* [cite_start]Miguel Pereira Soares [cite: 12]
+
