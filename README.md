@@ -3,7 +3,7 @@
 Sistema de monitoramento contínuo da cadeia do frio para transporte de iogurtes, focado em segurança alimentar e redução de desperdícios.
 
 ## 🎯 Objetivo
-Implementar um sensor de monitoramento térmico que registra variações de temperatura a cada minuto, garantindo que 100% das oscilações fora da faixa ideal gerem alertas automáticos[cite: 21, 22].
+Implementar um sensor de monitoramento térmico que registra variações de temperatura a cada minuto, garantindo que 100% das oscilações fora da faixa ideal gerem alertas automáticos[cite: 21, 22]
 
 ## 🚀 Funcionalidades
 * **Monitoramento Real-time:** Leituras constantes com frequência padrão de 1 minuto.
