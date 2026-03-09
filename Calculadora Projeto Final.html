@@ -17,27 +17,7 @@
         .logo {
             width: 75px;
             height: 75px;
-            animation: flutuar 3s ease-in-out infinite;
             }
-
-        @keyframes flutuar {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-
-            100% {  
-                transform: translateY(0px);
-            }
-
-        }
-
-        .btn:hover {
-            cursor: pointer;
-        }
 
         input {
             padding: 5px;
@@ -62,7 +42,7 @@
         <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
         <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
 
-        <button class="btn" onclick="calcular()">Calcular Retorno</button>
+        <button onclick="calcular()">Calcular Retorno</button>
 
         <br><br>
 
