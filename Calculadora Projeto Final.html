@@ -61,9 +61,9 @@
             // Calcula as variaveis de acordo com os inputs
             let cargasPerdidas = volume * taxaPerda;
 
-            let cargasPerdidasComSensor = cargasPerdidas * 0.2;
+            let cargasRecuperadasComSensor = cargasPerdidas * 0.8;
 
-            let cargasEvitadas = cargasPerdidas - cargasPerdidasComSensor;
+            let perdaFinanceira = cargasPerdidas * valorCarga;
 
             let valorSemSensor = volume * valorCarga * taxaPerda;
             let valorComSensor = valorSemSensor * 0.2;
@@ -73,10 +73,10 @@
             output.innerHTML = `
                 <h3>Resultado da Simulação</h3>
 
-                Toneladas estimadas perdidas após o sensor: ${cargasPerdidasComSensor.toFixed(2)}T <br>
-                Toneladas estimadas preservadas após o sensor: ${cargasEvitadas.toFixed(2)}T <br>
-                Prejuízo máximo estimado com o sensor: R$ ${valorComSensor.toFixed(2)} (R$ ${(valorComSensor / 1000000).toFixed(1)} Milhões) <br>
-                Economia mínima estimada com o sensor: R$ ${economia.toFixed(2)} (R$ ${economia / 1000000} Milhões) <br>
+                Perdas totais financeiras: R$ ${perdaFinanceira.toFixed(2)} (R$ ${(perdaFinanceira / 1000000).toFixed(2)} Milhões)  <br>
+                Toneladas perdidas sem o sensor: ${(cargasPerdidas).toFixed(2)} Toneladas <br>
+                Toneladas estimadas preservadas após o sensor: ${cargasRecuperadasComSensor.toFixed(2)} Toneladas <br>
+                Economia mínima estimada com o sensor: R$ ${economia.toFixed(2)} (R$ ${(economia / 1000000).toFixed(2)} Milhões) <br>
             `;
 
 
