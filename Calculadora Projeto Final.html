@@ -53,11 +53,12 @@
 
     <script>
         function calcular() {
-
+            // Recebe os valores do input em variaveis
             let volume = Number(ipt_quantidade_cargas.value);
             let taxaPerda = Number(ipt_taxa_perda.value) / 100;
             let valorCarga = Number(ipt_valor_medio.value);
 
+            // Calcula as variaveis de acordo com os inputs
             let cargasPerdidas = volume * taxaPerda;
 
             let cargasPerdidasComSensor = cargasPerdidas * 0.2;
@@ -68,6 +69,7 @@
             let valorComSensor = valorSemSensor * 0.2;
             let economia = valorSemSensor - valorComSensor;
 
+            // É mostrado ao usuário os resultados de acordo com os valores calculados
             output.innerHTML = `
                 <h3>Resultado da Simulação</h3>
 
