@@ -17,7 +17,7 @@
         .logo {
             width: 75px;
             height: 75px;
-            }
+        }
 
         input {
             padding: 5px;
@@ -29,26 +29,26 @@
     </style>
     <div animation-name><img class="logo" src="Save_Yogurt_Logo_Vetorizada_Ofc.png" style="width: 75px;
                 height: 75px;"></div><br>
-        <h1>Calculadora financeira</h1>
+    <h1>Calculadora financeira</h1>
 
-        <br><br>
+    <br><br>
 
-        <label>Quantas toneladas são transportadas por ano?</label><br>
-        <input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
+    <label>Quantas toneladas são transportadas por ano?</label><br>
+    <input type="number" id="ipt_quantidade_cargas" placeholder="Ex. 100"><br><br>
 
-        <label>Porcentagens de perdas por falha na cadeia fria? (Sem "%")</label><br>
-        <input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
+    <label>Porcentagens de perdas por falha na cadeia fria? (Sem "%")</label><br>
+    <input type="number" id="ipt_taxa_perda" placeholder="Ex. 15"><br><br>
 
-        <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
-        <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
+    <label>Qual o valor médio da tonelada de iogurte (R$)?</label><br>
+    <input type="number" id="ipt_valor_medio" placeholder="Ex. 1000"><br><br>
 
-        <button onclick="calcular()">Calcular Retorno</button>
+    <button onclick="calcular()">Calcular Retorno</button>
 
-        <br><br>
+    <br><br>
 
-        <div id="output"></div>
+    <div id="output"></div>
 
-    
+
 
 
     <script>
@@ -73,7 +73,7 @@
 
                 Toneladas estimadas perdidas após o sensor: ${cargasPerdidasComSensor.toFixed(2)}T <br>
                 Toneladas estimadas preservadas após o sensor: ${cargasEvitadas.toFixed(2)}T <br>
-                Prejuízo máximo estimado com o sensor: R$ ${valorComSensor.toFixed(2)} (R$ ${valorComSensor.toFixed(0) / 1000000} Milhões) <br>
+                Prejuízo máximo estimado com o sensor: R$ ${valorComSensor.toFixed(2)} (R$ ${(valorComSensor / 1000000).toFixed(1)} Milhões) <br>
                 Economia mínima estimada com o sensor: R$ ${economia.toFixed(2)} (R$ ${economia / 1000000} Milhões) <br>
             `;
 
