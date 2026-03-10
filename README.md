@@ -9,7 +9,7 @@ Implementar um sensor de monitoramento térmico que registra variações de temp
 * **Monitoramento Real-time:** Leituras constantes com frequência padrão de 1 minuto.
 * **Alertas Inteligentes:** Notificações automáticas para temperaturas fora do intervalo de **2°C a 8°C**.
 * **Classificação de Risco:** Sistema de níveis (Normal, Alerta e Crítico) para facilitar a tomada de decisão.
-* **Análise Financeira:** Calculadoras integradas para estimar o Retorno sobre Investimento (ROI) e economia logística.
+* **Análise Financeira:** Calculadoras integradas para estimar a economia logística adquirindo nosso produto.
 
 ##  Tecnologias
 * **Hardware:** Sensores digitais de temperatura para compartimentos de carga.
